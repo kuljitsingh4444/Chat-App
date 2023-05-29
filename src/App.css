@@ -1,0 +1,17 @@
+/* Colors Below */
+:root {
+  --app-text: #666664;
+  --app-white: #ffffff;
+  --app-blue: #d4ebf2;
+  --app-shadow: rgba(0, 0, 0, 0.2);
+}
+
+div {
+  word-break: break-word;
+}
+
+/* Colors
+redux
+popup
+localstorgae
+intendation */

@@ -10,11 +10,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    addCommentOperation: (data) => {
-      return dispatch(addCommentOperation(data));
-    },
-  };
+  return { };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainComponent);
