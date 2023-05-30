@@ -5,13 +5,22 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  console.log(action);
   switch (action.type) {
     case Types.ADD_COMMENT:
-      return {
-        ...state,
-        comments: action.data,
-      };
+      if(Array.isArray(action.data)){
+        return {
+          ...state,
+          comments: action.data,
+        };
+      } else {
+        return {
+          ...state,
+          comments: [
+            ...state.comments,
+            action.data
+          ]
+        }
+      }
 
     default:
       return state;

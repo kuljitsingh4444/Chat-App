@@ -1,10 +1,14 @@
 import '../styles/dropDown.css';
 import React, { useEffect, useState, useRef } from 'react';
 
-const DropDown = ({ options }) => {
+const DropDown = ({ options, updateTags }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [tagged, setTagged] = useState([]);
   const dropdownRef = useRef(null);
+
+	useEffect(() => {
+		updateTags(tagged)
+	}, [tagged])
 
   const handleCheck = (option) => {
     if (!tagged.includes(option.name)) {

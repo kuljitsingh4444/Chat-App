@@ -6,7 +6,7 @@
   padding-left: 5px;
 }
 .dropdown-container {
-  min-height: 30px;
+  min-height: 32px;
   width: 100%;
   border: 1px solid var(--app-border);
   border-radius: 4px;
@@ -27,7 +27,7 @@
 
 .options-list {
   background: var(--app-white);
-  padding: 25px;
+  padding: 23px 20px;
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 var(--app-shadow), 0 6px 20px 0 var(--app-shadow);
   width: calc(100% - 40px);
