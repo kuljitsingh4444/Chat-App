@@ -1,12 +1,12 @@
-/_ Colors\
-must format with prettier
-redux
-popup
-localstorgae
-intendation props validator own css for common components like dd,
-tag?,
-etc whatever common components
-own css
-why twice call
-self review code
-add useMemo, useCallback when needed_/
+- Key feature of the app:
+
+1. We have used redux to store the comments. This app follows the entire duck boilerplate for redux.
+2. We have custom css and custom components for every UI elements.
+3. Code is broken down into modular pieces.
+4. This app is created using Create React App CLI.
+
+- How to run the app:
+
+1. clone the repo and go to the root directory from the terminal.
+2. run - "npm i"
+3. run - "npm run start"
