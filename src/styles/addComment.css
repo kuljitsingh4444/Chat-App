@@ -7,7 +7,7 @@
 }
 
 .comment-area {
-  width: calc(100% - 5px);
+  width: calc(100% - 22px);
   resize: none;
   border: 1px solid var(--app-border);
   border-radius: 4px;
