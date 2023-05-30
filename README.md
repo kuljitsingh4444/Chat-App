@@ -4,6 +4,7 @@
 2. We have custom css and custom components for every UI elements.
 3. Code is broken down into modular pieces.
 4. This app is created using Create React App CLI.
+5. App is responsive upto 800px screen size.
 
 - How to run the app:
 
