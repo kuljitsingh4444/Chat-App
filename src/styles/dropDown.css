@@ -30,7 +30,7 @@
   padding: 23px 20px;
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 var(--app-shadow), 0 6px 20px 0 var(--app-shadow);
-  width: calc(100% - 40px);
+  width: calc(100% - 31px);
 }
 
 .option-item {

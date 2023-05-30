@@ -5,6 +5,7 @@ import '../styles/addComment.css';
 const AddComment = ({ addCommentOperation }) => {
   const [comment, setComment] = useState('');
   const [tagged, setTagged] = useState([]);
+  const [actions, showActions] = useState(false);
   const childRef = useRef(null);
 
   const options = useMemo(() => {
@@ -33,7 +34,7 @@ const AddComment = ({ addCommentOperation }) => {
   }, []);
 
   const handleAddComment = () => {
-    if (comment && comment.length) {
+    if ((comment && comment.length) || (tagged && tagged.length)) {
       const newComment = {
         comment,
         taggedTo: tagged,
@@ -72,18 +73,24 @@ const AddComment = ({ addCommentOperation }) => {
             ref={childRef}
             updateTags={setTagged}
             options={options}
+            udpateActionsView={showActions}
           ></DropDown>
-          <div className="action-buttons">
-            <button
-              onClick={() => handleAddComment()}
-              className="primary-button"
-            >
-              Save
-            </button>
-            <button onClick={() => clearComment()} className="secondary-button">
-              Cancel
-            </button>
-          </div>
+          {!actions && (
+            <div className="action-buttons">
+              <button
+                onClick={() => handleAddComment()}
+                className="primary-button"
+              >
+                Save
+              </button>
+              <button
+                onClick={() => clearComment()}
+                className="secondary-button"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </React.Fragment>
