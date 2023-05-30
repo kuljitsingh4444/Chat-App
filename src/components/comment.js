@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../styles/comment.css";
 
 const Comment = ({ comment }) => {
@@ -25,6 +26,14 @@ const Comment = ({ comment }) => {
 		return outputDateString;
 	}
 
+	const getTaggedNames = (tags) => {
+		return tags.map(tag => {
+			return(
+				<div key={tag} className="highlighted-text">{tag}</div>
+			)
+		})
+	}
+
 	return(
 		<div className="comment-container">
 			<div className="initials-container">
@@ -33,6 +42,7 @@ const Comment = ({ comment }) => {
 			<div>
 				<div className="updated-by">{comment.updatedBy}</div>
 				<div className="comment">{comment.comment}</div>
+				<div className="tagged-names">{getTaggedNames(comment.taggedTo)}</div>
 				<div className="updated-on">{getFormattedDate(comment.updatedOn)}</div>
 			</div>
 		</div>

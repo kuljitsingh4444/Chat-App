@@ -4,14 +4,31 @@
   --app-white: #ffffff;
   --app-blue: #d4ebf2;
   --app-shadow: rgba(0, 0, 0, 0.2);
+  --app-border: #c0c0c0;
 }
 
 div {
   word-break: break-word;
 }
 
-/* Colors
-redux
-popup
-localstorgae
-intendation */
+.highlighted-text {
+  font-weight: bold;
+  background: var(--app-blue);
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin-right: 7px;
+  width: fit-content;
+}
+
+.initials-container {
+  min-width: 33px;
+  min-height: 33px;
+  max-width: 33px;
+  max-height: 33px;
+  border: 1px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+}
