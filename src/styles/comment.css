@@ -1,22 +1,22 @@
 .comment-container {
-	display: flex;
-	margin-bottom: 30px;
-	font-size: 14px;
+  display: flex;
+  margin-bottom: 30px;
+  font-size: 14px;
 }
 
 .updated-by {
-	color: var(--app-text);
+  color: var(--app-text);
 }
 
 .updated-on {
-	color: var(--app-text);
+  color: var(--app-text);
 }
 
 .comment {
-	margin: 7px 0px;
+  margin: 7px 0px;
 }
 
 .tagged-names {
-	display: flex;
-	margin-bottom: 8px;
+  display: flex;
+  margin-bottom: 8px;
 }

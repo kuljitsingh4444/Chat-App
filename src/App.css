@@ -5,8 +5,11 @@
   --app-blue: #d4ebf2;
   --app-shadow: rgba(0, 0, 0, 0.2);
   --app-border: #c0c0c0;
+  --app-dark: black;
+  --app-primary: #cdc2f5;
 }
 
+/* Common CSS */
 div {
   word-break: break-word;
 }
@@ -31,4 +34,22 @@ div {
   align-items: center;
   justify-content: center;
   margin-right: 25px;
+}
+.primary-button,
+.secondary-button {
+  outline: none;
+  border-radius: 4px;
+  height: 35px;
+  width: 100px;
+  border: none;
+  font-weight: bold;
+}
+
+.primary-button {
+  background: var(--app-primary);
+  color: var(--app-white);
+}
+
+.secondary-button {
+  background: var(--app-white);
 }

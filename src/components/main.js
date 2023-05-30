@@ -1,15 +1,15 @@
-import { useEffect } from "react";
-import Popup from "./popup";
-import Comments from "../containers/commentsContainer";
+import { useEffect } from 'react';
+import Popup from './popup';
+import Comments from '../containers/commentsContainer';
 
 const Main = (props) => {
-		return(
-			<div>
-				<Popup>
-					<Comments></Comments>
-				</Popup>
-			</div>  
-		)
-}
+  return (
+    <div>
+      <Popup>
+        <Comments></Comments>
+      </Popup>
+    </div>
+  );
+};
 
-export default Main
+export default Main;

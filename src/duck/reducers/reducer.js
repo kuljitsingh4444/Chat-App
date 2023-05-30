@@ -1,20 +1,19 @@
 import Types from '../types';
 
 const initialState = {
-  comments : []
-}
+  comments: [],
+};
 
-export default function ( state = initialState, action ) {
-
-  console.log(action)
-  switch(action.type) {
+export default function (state = initialState, action) {
+  console.log(action);
+  switch (action.type) {
     case Types.ADD_COMMENT:
-      return{
+      return {
         ...state,
-        comments : action.data
-      }
+        comments: action.data,
+      };
 
-    default :
+    default:
       return state;
   }
 }
