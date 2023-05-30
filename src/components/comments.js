@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ApiConfig from '../helpers/apiConfig';
 import { comments as commentsLink } from '../helpers/url';
 import Comment from './comment';
@@ -9,6 +9,7 @@ const loadId = 11711183;
 
 const Comments = ({ addCommentOperation, comments }) => {
   const apiConfig = new ApiConfig();
+  const allCommentsRef = useRef(null);
 
   useEffect(() => {
     getComments();
@@ -20,6 +21,19 @@ const Comments = ({ addCommentOperation, comments }) => {
     });
   };
 
+  const scrollToBottom = () => {
+    const element = allCommentsRef.current;
+    if (element) {
+      element.scrollTop = element.scrollHeight;
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      scrollToBottom();
+    }, 1);
+  }, [comments]);
+
   return (
     <div className="comments-layout">
       <div>
@@ -27,7 +41,7 @@ const Comments = ({ addCommentOperation, comments }) => {
           <div className="comments-head">Comments ({comments.length ?? 0})</div>
           <div className="highlighted-text">LOAN ID - {loadId}</div>
         </div>
-        <div className="all-comments">
+        <div ref={allCommentsRef} className="all-comments">
           {comments.map((comment, index) => {
             return <Comment key={index} comment={comment}></Comment>;
           })}

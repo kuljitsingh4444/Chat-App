@@ -14,6 +14,7 @@
 
 .comment {
   margin: 7px 0px;
+  white-space: pre;
 }
 
 .tagged-names {

@@ -1,14 +1,22 @@
 import '../styles/dropDown.css';
 import React, { useEffect, useState, useRef } from 'react';
 
-const DropDown = ({ options, updateTags }) => {
+const DropDown = React.forwardRef(({ options, updateTags }, ref) => {
   const [showOptions, setShowOptions] = useState(false);
   const [tagged, setTagged] = useState([]);
   const dropdownRef = useRef(null);
 
-	useEffect(() => {
-		updateTags(tagged)
-	}, [tagged])
+  const clearTagsSelected = () => {
+    setTagged([]);
+  };
+
+  React.useImperativeHandle(ref, () => ({
+    clearTagsSelected,
+  }));
+
+  useEffect(() => {
+    updateTags(tagged);
+  }, [tagged]);
 
   const handleCheck = (option) => {
     if (!tagged.includes(option.name)) {
@@ -86,6 +94,6 @@ const DropDown = ({ options, updateTags }) => {
       )}
     </div>
   );
-};
+});
 
 export default DropDown;

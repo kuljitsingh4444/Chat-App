@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import DropDown from './dropDown';
 import '../styles/addComment.css';
 
 const AddComment = ({ addCommentOperation }) => {
-  const [comment, setComment] = useState("")
-  const [tagged, setTagged] = useState([])
+  const [comment, setComment] = useState('');
+  const [tagged, setTagged] = useState([]);
+  const childRef = useRef(null);
 
   const options = useMemo(() => {
     return [
@@ -32,32 +33,56 @@ const AddComment = ({ addCommentOperation }) => {
   }, []);
 
   const handleAddComment = () => {
-    if(comment && comment.length){
+    if (comment && comment.length) {
       const newComment = {
         comment,
         taggedTo: tagged,
-        updatedBy: "Anonymous User",
-        updatedOn: new Date().toISOString()
-      }
-      addCommentOperation(newComment)
-      setComment("")
+        updatedBy: 'Anonymous User',
+        updatedOn: new Date().toISOString(),
+      };
+      addCommentOperation(newComment);
+      clearComment();
     }
-  }
+  };
 
   const commentUpdated = (e) => {
-    setComment(e.target.value)
-  }
+    setComment(e.target.value);
+  };
+
+  const clearComment = () => {
+    setComment('');
+    if (childRef && childRef.current) {
+      childRef.current.clearTagsSelected();
+    }
+  };
 
   return (
     <React.Fragment>
       <div className="add-comment-section">
-        <div className="initials-container">?</div>
+        <div className="initials-container">AU</div>
         <div className="comments-contiainer">
-          <textarea value={comment} onChange={(e) => commentUpdated(e)} className="comment-area" rows={5}></textarea>
-          <DropDown updateTags={setTagged} options={options}></DropDown>
+          <textarea
+            placeholder="Anonymous User can send message here"
+            value={comment}
+            onChange={(e) => commentUpdated(e)}
+            className="comment-area"
+            rows={5}
+          ></textarea>
+          <DropDown
+            ref={childRef}
+            updateTags={setTagged}
+            options={options}
+          ></DropDown>
           <div className="action-buttons">
-            <button onClick={() => handleAddComment()} className="primary-button">Save</button>
-            <button className="secondary-button">Cancel</button>
+            <button
+              onClick={() => handleAddComment()}
+              className="primary-button"
+            >
+              Save
+            </button>
+            <button onClick={() => clearComment()} className="secondary-button">
+              Cancel
+            </button>
           </div>
         </div>
       </div>

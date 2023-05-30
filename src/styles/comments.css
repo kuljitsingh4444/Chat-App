@@ -25,6 +25,7 @@
   margin-top: 3px;
 }
 .all-comments {
+  min-height: 250px;
   max-height: 250px;
   overflow: auto;
 }

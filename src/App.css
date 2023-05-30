@@ -43,8 +43,8 @@ div {
   width: 100px;
   border: none;
   font-weight: bold;
-	box-shadow: 0 4px 8px 0 var(--app-shadow), 0 6px 20px 0 var(--app-shadow);
-		cursor: pointer;
+  box-shadow: 0 4px 8px 0 var(--app-shadow), 0 6px 20px 0 var(--app-shadow);
+  cursor: pointer;
 }
 
 .primary-button {
