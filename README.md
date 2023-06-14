@@ -1,13 +1,12 @@
-- Key feature of the app:
+* React / Redux ( DUCK ) demo chat application
 
-1. We have used redux to store the comments. This app follows the entire duck boilerplate for redux.
-2. We have custom css and custom components for every UI elements.
-3. Code is broken down into modular pieces.
-4. This app is created using Create React App CLI.
-5. App is responsive upto 800px screen size.
+* Responsive upto 800px tablet size
 
-- How to run the app:
-
-1. clone the repo and go to the root directory from the terminal.
+* How to run the app ?
+1. clone the repo and go to the root directory, "cd Chat-App"
 2. run - "npm i"
 3. run - "npm run start"
+
+
+Feel free to react out to me at kuljit.singh4444@gmail.com
+Thanks for dropping by!
